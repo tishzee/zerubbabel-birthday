@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Zerubbabel!</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#000; min-height:100vh; display:flex; align-items:center; justify-content:center; font-family:sans-serif; }
+  @keyframes flash { 0%,100%{opacity:1} 50%{opacity:0.2} }
+  @keyframes rise { from{transform:translateY(40px);opacity:0} to{transform:translateY(0);opacity:1} }
+  @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+  @keyframes bolt { 0%{opacity:0} 10%{opacity:1} 90%{opacity:1} 100%{opacity:0} }
+  @keyframes countdown { from{width:100%} to{width:0%} }
+  .bolt { position:fixed; font-size:2.5rem; animation:bolt 2s infinite; }
+  #screen { text-align:center; padding:2rem; position:relative; z-index:2; animation:rise 1.2s ease forwards; }
+  #msg { display:none; text-align:center; padding:2rem; animation:rise 1s ease forwards; }
+</style>
+</head>
+<body>
+
+<div class="bolt" style="top:5%;left:5%;animation-delay:0s;">⚡</div>
+<div class="bolt" style="top:5%;right:5%;animation-delay:0.5s;">⚡</div>
+<div class="bolt" style="top:25%;left:3%;animation-delay:1s;">⚡</div>
+<div class="bolt" style="top:25%;right:3%;animation-delay:1.5s;">⚡</div>
+<div class="bolt" style="bottom:10%;left:5%;animation-delay:0.7s;">⚡</div>
+<div class="bolt" style="bottom:10%;right:5%;animation-delay:1.2s;">⚡</div>
+
+<div id="screen" onclick="claim()">
+  <div style="color:#FFD700;font-size:1rem;letter-spacing:0.3em;text-transform:uppercase;margin-bottom:1rem;">
+    StormKid Game Presents
+  </div>
+  <div style="color:#fff;font-size:3.5rem;font-weight:700;line-height:1;margin-bottom:0.5rem;text-shadow:0 0 40px #4FC3F7;">
+    HAPPY BIRTHDAY
+  </div>
+  <div style="color:#4FC3F7;font-size:3.2rem;font-weight:700;animation:pulse 2s infinite;margin-bottom:1.5rem;text-shadow:0 0 30px #4FC3F7;">
+    ZERUBBABEL!
+  </div>
+  <div style="width:80px;height:3px;background:#FFD700;margin:0 auto 1.5rem;"></div>
+  <div style="color:#FFD700;font-size:1.2rem;margin-bottom:0.5rem;">
+    You are 10 years old today 🎂
+  </div>
+  <div style="color:#aaa;font-size:1rem;margin-bottom:2.5rem;font-style:italic;">
+    Storm King of the Kingdom
+  </div>
+  <div style="background:#4FC3F7;color:#000;font-size:1.1rem;font-weight:700;padding:1rem 2.5rem;border-radius:50px;display:inline-block;animation:pulse 1.5s infinite;cursor:pointer;">
+    ⚡ TAP TO CLAIM YOUR THRONE ⚡
+  </div>
+  <div style="color:#555;font-size:0.85rem;margin-top:2rem;">
+    A game made with love by Dad
+  </div>
+</div>
+
+<div id="msg">
+  <div style="font-size:5rem;margin-bottom:1rem;">👑⚡</div>
+  <div style="color:#4FC3F7;font-size:2.5rem;font-weight:700;margin-bottom:1rem;">
+    The Storm King rises!
+  </div>
+  <div style="color:#fff;font-size:1.1rem;line-height:2;max-width:400px;margin:0 auto 1.5rem;">
+    Your kingdom awaits, Zerubbabel.<br>
+    Wield your lightning with wisdom.<br>
+    Happy Birthday, champion! 🎉
+  </div>
+
+  <div style="color:#FFD700;font-size:1rem;margin-bottom:0.25rem;">— With love, Dad</div>
+  <div style="color:#FFD700;font-size:1rem;font-weight:700;margin-bottom:2.5rem;">Murtala I. Otokiti</div>
+
+  <div style="border:1px solid #333;border-radius:12px;padding:1.5rem 2rem;max-width:380px;margin:0 auto;">
+    <div style="color:#FFD700;font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:0.5rem;">
+      Coming Soon
+    </div>
+    <div style="color:#fff;font-size:1.4rem;font-weight:700;margin-bottom:0.5rem;">
+      ⚡ Zerubbabel: Storm King
+    </div>
+    <div style="color:#aaa;font-size:0.9rem;line-height:1.6;margin-bottom:1rem;">
+      Your own 3D adventure game is being built.<br>
+      Fight enemies. Cast lightning. Rule the kingdom.
+    </div>
+    <div style="background:#111;border-radius:8px;height:6px;overflow:hidden;margin-bottom:0.5rem;">
+      <div style="background:#4FC3F7;height:100%;width:35%;border-radius:8px;"></div>
+    </div>
+    <div style="color:#555;font-size:0.8rem;">Game progress: 35% complete</div>
+  </div>
+</div>
+
+<script>
+function claim() {
+  document.getElementById('screen').style.display = 'none';
+  document.getElementById('msg').style.display = 'block';
+}
+</script>
+</body>
+</html>
